@@ -26,8 +26,6 @@ def arp_restore(destination_ip, source_ip):
     scapy.send(packet, count=4, verbose=False) # will send packet 4 times to make sure to correct arp table
 
 # Taking user input
-# client_ip = "192.168.100.37"
-# gateway_ip = "192.168.100.1"
 client_ip = input(">>Enter client IP: ")
 gateway_ip = input(">>Enter Network IP: ")
 # To continue the spoofing packets
