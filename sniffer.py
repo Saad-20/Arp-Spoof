@@ -2,6 +2,16 @@
 # pip install scapy_http (requirements)
 import scapy.all as scapy
 from scapy.layers import http
+import argparse as parse
+
+def parsing_arguments():
+    parser = parse.ArgumentParser()
+    parser.add_argument("-i", "--interface", dest="sniff", help="Enter network interface to start sniffing")
+    options = parser.parse_args()
+
+    if not options.sniff:
+        parser.error("[-] Network Interface is missing. Use --help for more info")
+    return options
 
 def extracting_credentials(packets):
     if packets.haslayer(scapy.Raw):  # This will check for if the packet has a raw layer
