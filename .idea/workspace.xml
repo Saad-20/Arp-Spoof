@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="057862ab-4566-4555-8865-8636348bd9e5" name="Default Changelist" comment="">
+    <list default="true" id="c60c456c-508a-4967-8cc0-3c74dd9d3285" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/dns_spoofer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Arp_Spoof.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Arp_Spoof.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sniffer.py" beforeDir="false" afterPath="$PROJECT_DIR$/sniffer.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,7 +22,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1ZflQCwUEWHk6M2p6JC0jAan7JE" />
+  <component name="ProjectId" id="1aAkv7DoIPMdyrHPadKmucuRi9C" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -29,11 +31,11 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../network_scanner/network_scanner.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager" selected="Python.sniffer">
-    <configuration name="arp_spoof" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager">
+    <configuration name="dns_spoofer" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Arp_Spoof" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -45,7 +47,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/arp_spoof.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/dns_spoofer.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -54,35 +56,9 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="sniffer" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Arp_Spoof" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/sniffer.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <list>
-      <item itemvalue="Python.arp_spoof" />
-      <item itemvalue="Python.sniffer" />
-    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.sniffer" />
-        <item itemvalue="Python.arp_spoof" />
+        <item itemvalue="Python.dns_spoofer" />
       </list>
     </recent_temporary>
   </component>
@@ -91,67 +67,63 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="057862ab-4566-4555-8865-8636348bd9e5" name="Default Changelist" comment="" />
-      <created>1585238011176</created>
+      <changelist id="c60c456c-508a-4967-8cc0-3c74dd9d3285" name="Default Changelist" comment="" />
+      <created>1586186014058</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1585238011176</updated>
+      <updated>1586186014058</updated>
     </task>
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="141" y="60" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1585844408494">
+    <state x="141" y="60" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1586188412363">
       <screen x="0" y="31" width="1366" height="737" />
     </state>
-    <state x="141" y="60" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.31.1366.737@0.31.1366.737" timestamp="1585844408494" />
-    <state x="395" y="206" width="575" height="394" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1585328241001">
+    <state x="141" y="60" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.31.1366.737@0.31.1366.737" timestamp="1586188412363" />
+    <state x="466" y="160" width="434" height="487" key="FileChooserDialogImpl" timestamp="1586187327449">
       <screen x="0" y="31" width="1366" height="737" />
     </state>
-    <state x="395" y="206" width="575" height="394" key="#com.intellij.fileTypes.FileTypeChooser/0.31.1366.737@0.31.1366.737" timestamp="1585328241001" />
-    <state x="466" y="160" width="434" height="487" key="FileChooserDialogImpl" timestamp="1585591376633">
+    <state x="466" y="160" width="434" height="487" key="FileChooserDialogImpl/0.31.1366.737@0.31.1366.737" timestamp="1586187327449" />
+    <state width="1343" height="216" key="GridCell.Tab.0.bottom" timestamp="1586193644795">
       <screen x="0" y="31" width="1366" height="737" />
     </state>
-    <state x="466" y="160" width="434" height="487" key="FileChooserDialogImpl/0.31.1366.737@0.31.1366.737" timestamp="1585591376633" />
-    <state width="1343" height="216" key="GridCell.Tab.0.bottom" timestamp="1585845543044">
+    <state width="1343" height="216" key="GridCell.Tab.0.bottom/0.31.1366.737@0.31.1366.737" timestamp="1586193644795" />
+    <state width="1343" height="216" key="GridCell.Tab.0.center" timestamp="1586193644794">
       <screen x="0" y="31" width="1366" height="737" />
     </state>
-    <state width="1343" height="216" key="GridCell.Tab.0.bottom/0.31.1366.737@0.31.1366.737" timestamp="1585845543044" />
-    <state width="1343" height="216" key="GridCell.Tab.0.center" timestamp="1585845543043">
+    <state width="1343" height="216" key="GridCell.Tab.0.center/0.31.1366.737@0.31.1366.737" timestamp="1586193644794" />
+    <state width="1343" height="216" key="GridCell.Tab.0.left" timestamp="1586193644793">
       <screen x="0" y="31" width="1366" height="737" />
     </state>
-    <state width="1343" height="216" key="GridCell.Tab.0.center/0.31.1366.737@0.31.1366.737" timestamp="1585845543043" />
-    <state width="1343" height="216" key="GridCell.Tab.0.left" timestamp="1585845543042">
+    <state width="1343" height="216" key="GridCell.Tab.0.left/0.31.1366.737@0.31.1366.737" timestamp="1586193644793" />
+    <state width="1343" height="216" key="GridCell.Tab.0.right" timestamp="1586193644794">
       <screen x="0" y="31" width="1366" height="737" />
     </state>
-    <state width="1343" height="216" key="GridCell.Tab.0.left/0.31.1366.737@0.31.1366.737" timestamp="1585845543042" />
-    <state width="1343" height="216" key="GridCell.Tab.0.right" timestamp="1585845543044">
+    <state width="1343" height="216" key="GridCell.Tab.0.right/0.31.1366.737@0.31.1366.737" timestamp="1586193644794" />
+    <state width="1343" height="216" key="GridCell.Tab.1.bottom" timestamp="1586193644796">
       <screen x="0" y="31" width="1366" height="737" />
     </state>
-    <state width="1343" height="216" key="GridCell.Tab.0.right/0.31.1366.737@0.31.1366.737" timestamp="1585845543044" />
-    <state width="1343" height="216" key="GridCell.Tab.1.bottom" timestamp="1585845543046">
+    <state width="1343" height="216" key="GridCell.Tab.1.bottom/0.31.1366.737@0.31.1366.737" timestamp="1586193644796" />
+    <state width="1343" height="216" key="GridCell.Tab.1.center" timestamp="1586193644795">
       <screen x="0" y="31" width="1366" height="737" />
     </state>
-    <state width="1343" height="216" key="GridCell.Tab.1.bottom/0.31.1366.737@0.31.1366.737" timestamp="1585845543046" />
-    <state width="1343" height="216" key="GridCell.Tab.1.center" timestamp="1585845543045">
+    <state width="1343" height="216" key="GridCell.Tab.1.center/0.31.1366.737@0.31.1366.737" timestamp="1586193644795" />
+    <state width="1343" height="216" key="GridCell.Tab.1.left" timestamp="1586193644795">
       <screen x="0" y="31" width="1366" height="737" />
     </state>
-    <state width="1343" height="216" key="GridCell.Tab.1.center/0.31.1366.737@0.31.1366.737" timestamp="1585845543045" />
-    <state width="1343" height="216" key="GridCell.Tab.1.left" timestamp="1585845543045">
+    <state width="1343" height="216" key="GridCell.Tab.1.left/0.31.1366.737@0.31.1366.737" timestamp="1586193644795" />
+    <state width="1343" height="216" key="GridCell.Tab.1.right" timestamp="1586193644796">
       <screen x="0" y="31" width="1366" height="737" />
     </state>
-    <state width="1343" height="216" key="GridCell.Tab.1.left/0.31.1366.737@0.31.1366.737" timestamp="1585845543045" />
-    <state width="1343" height="216" key="GridCell.Tab.1.right" timestamp="1585845543046">
+    <state width="1343" height="216" key="GridCell.Tab.1.right/0.31.1366.737@0.31.1366.737" timestamp="1586193644796" />
+    <state x="172" y="35" width="1022" height="733" key="SettingsEditor" timestamp="1586190155417">
       <screen x="0" y="31" width="1366" height="737" />
     </state>
-    <state width="1343" height="216" key="GridCell.Tab.1.right/0.31.1366.737@0.31.1366.737" timestamp="1585845543046" />
-    <state x="343" y="229" key="com.intellij.ide.util.TipDialog" timestamp="1585844221824">
+    <state x="172" y="35" width="1022" height="733" key="SettingsEditor/0.31.1366.737@0.31.1366.737" timestamp="1586190155417" />
+    <state x="343" y="229" key="com.intellij.ide.util.TipDialog" timestamp="1586190395696">
       <screen x="0" y="31" width="1366" height="737" />
     </state>
-    <state x="343" y="229" key="com.intellij.ide.util.TipDialog/0.31.1366.737@0.31.1366.737" timestamp="1585844221824" />
-    <state x="347" y="94" width="672" height="618" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1585343066018">
-      <screen x="0" y="31" width="1366" height="737" />
-    </state>
-    <state x="347" y="94" width="672" height="618" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.31.1366.737@0.31.1366.737" timestamp="1585343066017" />
+    <state x="343" y="229" key="com.intellij.ide.util.TipDialog/0.31.1366.737@0.31.1366.737" timestamp="1586190395696" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
