@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="c60c456c-508a-4967-8cc0-3c74dd9d3285" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backdoor.py" beforeDir="false" afterPath="$PROJECT_DIR$/backdoor.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/injector.py" beforeDir="false" afterPath="$PROJECT_DIR$/injector.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -27,8 +29,9 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../android_hacking" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunManager">
@@ -77,42 +80,42 @@
       <screen x="0" y="31" width="1366" height="737" />
     </state>
     <state x="141" y="60" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.31.1366.737@0.31.1366.737" timestamp="1586188412363" />
-    <state x="466" y="160" width="434" height="487" key="FileChooserDialogImpl" timestamp="1586187327449">
+    <state x="466" y="160" width="434" height="487" key="FileChooserDialogImpl" timestamp="1587423434084">
       <screen x="0" y="31" width="1366" height="737" />
     </state>
-    <state x="466" y="160" width="434" height="487" key="FileChooserDialogImpl/0.31.1366.737@0.31.1366.737" timestamp="1586187327449" />
-    <state width="1343" height="174" key="GridCell.Tab.0.bottom" timestamp="1586206045343">
+    <state x="466" y="160" width="434" height="487" key="FileChooserDialogImpl/0.31.1366.737@0.31.1366.737" timestamp="1587423434084" />
+    <state width="1343" height="216" key="GridCell.Tab.0.bottom" timestamp="1587425279590">
       <screen x="0" y="31" width="1366" height="737" />
     </state>
-    <state width="1343" height="174" key="GridCell.Tab.0.bottom/0.31.1366.737@0.31.1366.737" timestamp="1586206045343" />
-    <state width="1343" height="174" key="GridCell.Tab.0.center" timestamp="1586206045341">
+    <state width="1343" height="216" key="GridCell.Tab.0.bottom/0.31.1366.737@0.31.1366.737" timestamp="1587425279590" />
+    <state width="1343" height="216" key="GridCell.Tab.0.center" timestamp="1587425279589">
       <screen x="0" y="31" width="1366" height="737" />
     </state>
-    <state width="1343" height="174" key="GridCell.Tab.0.center/0.31.1366.737@0.31.1366.737" timestamp="1586206045341" />
-    <state width="1343" height="174" key="GridCell.Tab.0.left" timestamp="1586206045341">
+    <state width="1343" height="216" key="GridCell.Tab.0.center/0.31.1366.737@0.31.1366.737" timestamp="1587425279589" />
+    <state width="1343" height="216" key="GridCell.Tab.0.left" timestamp="1587425279588">
       <screen x="0" y="31" width="1366" height="737" />
     </state>
-    <state width="1343" height="174" key="GridCell.Tab.0.left/0.31.1366.737@0.31.1366.737" timestamp="1586206045341" />
-    <state width="1343" height="174" key="GridCell.Tab.0.right" timestamp="1586206045342">
+    <state width="1343" height="216" key="GridCell.Tab.0.left/0.31.1366.737@0.31.1366.737" timestamp="1587425279588" />
+    <state width="1343" height="216" key="GridCell.Tab.0.right" timestamp="1587425279590">
       <screen x="0" y="31" width="1366" height="737" />
     </state>
-    <state width="1343" height="174" key="GridCell.Tab.0.right/0.31.1366.737@0.31.1366.737" timestamp="1586206045342" />
-    <state width="1343" height="216" key="GridCell.Tab.1.bottom" timestamp="1586202662630">
+    <state width="1343" height="216" key="GridCell.Tab.0.right/0.31.1366.737@0.31.1366.737" timestamp="1587425279590" />
+    <state width="1343" height="216" key="GridCell.Tab.1.bottom" timestamp="1587425279592">
       <screen x="0" y="31" width="1366" height="737" />
     </state>
-    <state width="1343" height="216" key="GridCell.Tab.1.bottom/0.31.1366.737@0.31.1366.737" timestamp="1586202662630" />
-    <state width="1343" height="216" key="GridCell.Tab.1.center" timestamp="1586202662629">
+    <state width="1343" height="216" key="GridCell.Tab.1.bottom/0.31.1366.737@0.31.1366.737" timestamp="1587425279592" />
+    <state width="1343" height="216" key="GridCell.Tab.1.center" timestamp="1587425279591">
       <screen x="0" y="31" width="1366" height="737" />
     </state>
-    <state width="1343" height="216" key="GridCell.Tab.1.center/0.31.1366.737@0.31.1366.737" timestamp="1586202662629" />
-    <state width="1343" height="216" key="GridCell.Tab.1.left" timestamp="1586202662628">
+    <state width="1343" height="216" key="GridCell.Tab.1.center/0.31.1366.737@0.31.1366.737" timestamp="1587425279591" />
+    <state width="1343" height="216" key="GridCell.Tab.1.left" timestamp="1587425279591">
       <screen x="0" y="31" width="1366" height="737" />
     </state>
-    <state width="1343" height="216" key="GridCell.Tab.1.left/0.31.1366.737@0.31.1366.737" timestamp="1586202662628" />
-    <state width="1343" height="216" key="GridCell.Tab.1.right" timestamp="1586202662629">
+    <state width="1343" height="216" key="GridCell.Tab.1.left/0.31.1366.737@0.31.1366.737" timestamp="1587425279591" />
+    <state width="1343" height="216" key="GridCell.Tab.1.right" timestamp="1587425279592">
       <screen x="0" y="31" width="1366" height="737" />
     </state>
-    <state width="1343" height="216" key="GridCell.Tab.1.right/0.31.1366.737@0.31.1366.737" timestamp="1586202662629" />
+    <state width="1343" height="216" key="GridCell.Tab.1.right/0.31.1366.737@0.31.1366.737" timestamp="1587425279592" />
     <state x="172" y="35" width="1022" height="733" key="SettingsEditor" timestamp="1586190155417">
       <screen x="0" y="31" width="1366" height="737" />
     </state>

