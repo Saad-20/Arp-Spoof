@@ -9,6 +9,6 @@ The Following are the different modules that can be used while running arp-spoof
 **3. dns_spoofer.py**  
 **4. injector.py**  
 **5. sniffer.py**
-##Prerequisites
-##Installation
-##ARP-SPOOFER
+## Prerequisites
+## Installation
+## ARP-SPOOFER

@@ -1,0 +1,13 @@
+# IPTABLES RULES
+
+To run on local machine and test it on your own computer run the following lines
+* iptables -I INPUT -j NFQUEUE --queue-num 0
+* iptables -I OUTPUT -j NFQUEUE --queue-num 0
+
+To run on a remote computer and test it on a victim machine
+* iptables -I FORWARD -j NFQUEUE --queue-num 0
+
+To flush all iptables rule
+* iptables --flush
+
+The user needs to flush all iptables in order to use their browser internet or else the connection will fail
